@@ -23,6 +23,18 @@ public class SikuliImageRecognition {
 	    ScreenRegion r = sRegion.wait(imageTarget, 7000);
 	    Mouse mouse = new DesktopMouse();
 	    mouse.click(r.getCenter());
+	    mouse.move(r.getCenter());
 	}
-
+	public boolean moveOnImage(String imageName){
+		try{
+		File buttonPathFile = new File("src/test/resources/images/" + imageName);                
+	    Target imageTarget = new ImageTarget(buttonPathFile);
+	    ScreenRegion r = sRegion.wait(imageTarget, 7000);
+	    Mouse mouse = new DesktopMouse();
+	    mouse.move(r.getCenter());}
+		catch (Exception e){
+			return false;
+		}
+		return true;
+	}
 }
