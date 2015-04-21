@@ -47,7 +47,6 @@ public class PlayVideoTest {
 		// Cheking that video was played. Script with id 'player-comscore' appears only after you click on PLAY
 		
 		Assert.assertTrue(driver.findElement(By.id("player-comscore")).isEnabled(), "element is diplayed");
-		Thread.sleep(10000);
 		driver.switchTo().defaultContent();
 	}
 	@Test
